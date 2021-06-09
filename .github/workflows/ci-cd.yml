@@ -43,9 +43,9 @@ jobs:
       run: npm ci
 
     - name: Test 🚨
-      run: ls
+      run: ls -a
 
-  build:
+  build-deploy:
     needs: [linting, testing]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
