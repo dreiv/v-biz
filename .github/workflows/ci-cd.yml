@@ -57,9 +57,6 @@ jobs:
         path: '**/node_modules'
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-    - name: List 🚨
-      run: ls -a
-
     - name: Test 🚨
       run: .github/scripts/setupTestMatrix.sh ${{ matrix.chunk }} 2
 
