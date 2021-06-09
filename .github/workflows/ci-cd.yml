@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        chunk: [1 ,2, 3, 4]
+        chunk: [1 ,2]
 
     steps:
     - name: Checkout 🛎️
@@ -58,7 +58,7 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
     - name: Test 🚨
-      run: .github/scripts/setupTestMatrix.sh ${{ matrix.chunk }} 4
+      run: .github/scripts/setupTestMatrix.sh ${{ matrix.chunk }} 2
 
   build-deploy:
     needs: [linting, testing]
