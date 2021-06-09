@@ -48,7 +48,7 @@ jobs:
     - name: Test 🚨
       run: ./scripts/setupTestMatrix.sh ${{ matrix.chunk }} 10
 
-  build&deploy:
+  build-deploy:
     needs: [linting, testing]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
