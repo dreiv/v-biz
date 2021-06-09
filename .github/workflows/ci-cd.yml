@@ -26,6 +26,9 @@ jobs:
 
   testing:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        chunk: [1,2,3,4,5,6,7,8,9,10]
 
     steps:
     - name: Checkout 🛎️
@@ -43,9 +46,9 @@ jobs:
       run: npm ci
 
     - name: Test 🚨
-      run: npm run lint
+      run: ./scripts/setupTestMatrix.sh ${{ matrix.chunk }} 10
 
-  build:
+  build&deploy:
     needs: [linting, testing]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
