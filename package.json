@@ -81,7 +81,13 @@
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
     "transform": {
       "^.+\\.vue$": "vue-jest"
-    }
+    },
+    "testMatch": [
+      "**/*.spec.ts"
+    ],
+    "roots": [
+      "<rootDir>/src"
+    ]
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
