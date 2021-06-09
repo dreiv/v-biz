@@ -57,11 +57,8 @@ jobs:
         path: '**/node_modules'
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-    - name: list 🚨
-      run: npx jest --listTests | wc -l
-
     - name: Test 🚨
-      run: .github/scripts/setupTestMatrix.sh ${{ matrix.chunk }} 2
+      run: .github/scripts/setupTestMatrix.sh ${{ matrix.chunk }} 1
 
   build-deploy:
     needs: [linting, testing]
