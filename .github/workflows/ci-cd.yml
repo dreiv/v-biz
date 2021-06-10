@@ -61,7 +61,7 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
     - name: Test 🚨
-      run: .github/scripts/setupTestMatrix.sh ${{ matrix.chunk }} 2
+      run: .github/scripts/setupTestMatrix.sh ${{ matrix.chunk }} 1
 
   build-deploy:
     needs: [linting, testing]
