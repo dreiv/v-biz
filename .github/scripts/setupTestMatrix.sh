@@ -14,4 +14,4 @@ echo "======= TEST FILES ======="
 echo $TEST_FILES
 
 # Run each chunk
-npm run test:unit -- $TEST_FILES
+npm run test:unit -- --bail $TEST_FILES
