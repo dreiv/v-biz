@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/v-biz/precache-manifest.e9f75d25f3e10913431712d7de1348e4.js"
+  "/v-biz/precache-manifest.75f3724d42883bbe3a535f2b6459f109.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "v-biz"});
