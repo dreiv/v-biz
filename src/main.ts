@@ -7,7 +7,8 @@ import { prepareServices, prepareStorage } from "./ui/plugins";
 
 const store = makeStore();
 
-const app = createApp(App).use(store).use(router).mount("#app");
-
+const app = createApp(App).use(store).use(router);
 prepareStorage(app, store);
 prepareServices(app, store);
+
+app.mount("#app");
