@@ -1,5 +1,5 @@
-import { IArticleData, IArticle } from "./article.types";
-import { Article } from "./article";
+import { IArticleData, IArticle } from "../article.types";
+import { Article } from "../article";
 
 export const mockArticlesData = (): IArticleData[] => [
   {

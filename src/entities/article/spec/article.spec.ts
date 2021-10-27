@@ -1,19 +1,21 @@
-import { Article } from "./article";
-import { mockCommentsData, Comment } from "../comment";
+import { Article } from "../article";
+import { mockCommentsData, Comment } from "@/entities/comment";
 import { mockArticlesData } from "./article.mock";
+
+const mockArticle = mockArticlesData()[0];
 
 describe(">>> Article", () => {
   describe(">> constructor", () => {
     it("should instantiate id only if it was provided", () => {
       const entity1 = new Article({
-        ...mockArticlesData()[0],
+        ...mockArticle,
         id: 1,
       });
 
       expect(entity1.id).toBe(1);
 
       const entity2 = new Article({
-        ...mockArticlesData()[0],
+        ...mockArticle,
         id: undefined,
       });
 
@@ -22,14 +24,14 @@ describe(">>> Article", () => {
 
     it("should instantiate createdAt only if it was provided", () => {
       const entity1 = new Article({
-        ...mockArticlesData()[0],
+        ...mockArticle,
         createdAt: "2019-12-19T11:54:04 +05:00",
       });
 
       expect(entity1.createdAt).toBe("2019-12-19T11:54:04 +05:00");
 
       const entity2 = new Article({
-        ...mockArticlesData()[0],
+        ...mockArticle,
         createdAt: undefined,
       });
 
@@ -38,7 +40,7 @@ describe(">>> Article", () => {
 
     it("should instantiate Comments", () => {
       const entity1 = new Article({
-        ...mockArticlesData()[0],
+        ...mockArticle,
         comments: mockCommentsData(),
       });
 
